@@ -37,7 +37,17 @@ function repl() {
   res = str.replace(/−/g, "-");
   res=res.replace(/×/g,"*")
     res=res.replace(/÷/g,"/")
+	
+	 try { 
+    eval(abcd)
+  }
+  
+  finally {
+    document.getElementById("i").value = "Error!";
+  }
+	
   document.getElementById("i").value = eval(res)
+	
 }
 function vib(){navigator.vibrate(200)}
 var but=document.getElementsByTagName("button")
