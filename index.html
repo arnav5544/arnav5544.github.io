@@ -54,10 +54,10 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
     for="demo-menu-lower-right">
-  <li  class="mdl-menu__item">Settings</li>
-  <li disabled class="mdl-menu__item">Chat With Me</li>
-  <li  class="mdl-menu__item">Get Notified</li>
-  <li class="mdl-menu__item">Help</li>
+  <li  class="mdl-menu__item" onclick="document.querySelector('.chaport-launcher-button').click();">Chat With Me</li>
+  <li  class="mdl-menu__item" onclick="Notification.requestPermission()">Get Notified</li>
+  <li disabled class="mdl-menu__item">Settings</li>
+  <li disabled class="mdl-menu__item">Help</li>
 </ul>
 
     </div>
