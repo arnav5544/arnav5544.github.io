@@ -23,6 +23,11 @@ function check_divisibility(){
 var second=Number(document.getElementById("second").value)
 check(first,second)
 }
+function reset(){
+document.getElementById("first").value=""
+document.getElementById("second").value=""
+
+}
 
 
 
