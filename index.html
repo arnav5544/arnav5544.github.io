@@ -26,32 +26,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	    
         
-	 <!--snackbar for notifications-->
-	    <script>
-document.body.onload=(function() {
-  'use strict';
-  var a;
-  
-  var snackbarContainer = document.querySelector('#demo-toast-example');
-  var showToastButton = document.querySelector('#demo-show-toast');
-  showToastButton.addEventListener('click', function() {
-    'use strict';
-	if(Notification.permission=="default"){
-	Notification.requestPermission()
-	if(Notification.permission=="granted"){
-		a="Notification Allowed"
-		}		
-	}
-	  else if(Notification.permission=="denied"){
-		  a="OPPS! Notifications Blocked Allow From Your Browser"
-		  }
-	else{a="Notification Already Allowed"}
-    var data = {message: a};
-    snackbarContainer.MaterialSnackbar.showSnackbar(data);
-  });
-}());
-</script>
-	    <!--snackbar script end-->
+	
         <!-- Begin of Chaport Live Chat code -->
 	   
 <script type="text/javascript">
@@ -193,7 +168,32 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 </footer>
 </div>
 
-       
+     <!--snackbar for notifications-->
+	    <script>
+document.body.onload=(function() {
+  'use strict';
+  var a;
+  
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var showToastButton = document.querySelector('#demo-show-toast');
+  showToastButton.addEventListener('click', function() {
+    'use strict';
+	if(Notification.permission=="default"){
+	Notification.requestPermission()
+	if(Notification.permission=="granted"){
+		a="Notification Allowed"
+		}		
+	}
+	  else if(Notification.permission=="denied"){
+		  a="OPPS! Notifications Blocked Allow From Your Browser"
+		  }
+	else{a="Notification Already Allowed"}
+    var data = {message: a};
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+	    <!--snackbar script end-->   
         
     </body>
 </html>
