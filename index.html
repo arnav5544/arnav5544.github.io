@@ -181,13 +181,13 @@ document.body.onload=(function() {
 	if(Notification.permission=="default"){
 	Notification.requestPermission()
 	if(Notification.permission=="granted"){
-		a="Notification Allowed"
+		a="Notifications Allowed"
 		}		
 	}
 	  else if(Notification.permission=="denied"){
 		  a="OPPS! Notifications Blocked Allow From Your Browser"
 		  }
-	else{a="Notification Already Allowed"}
+	else{a="Notifications Already Allowed"}
     var data = {message: a};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
   });
