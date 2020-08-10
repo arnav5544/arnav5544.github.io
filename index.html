@@ -26,6 +26,36 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	    
         
+	 <!--snackbar for notifications-->
+	    <script>
+(function() {
+  'use strict';
+  var a;
+  
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var showToastButton = document.querySelector('#demo-show-toast');
+  showToastButton.addEventListener('click', function() {
+    'use strict';
+	if(Notification.permission=="default" || Notification.permission=="denied"){
+	Notification.requestPermission()
+	if(Notification.permission=="granted"){
+		a="Notification Allowed"
+		}
+		else if(Notification.permission=="denied"){
+		
+		a="OPPS! please Allow Notification"
+			Notification.requestPermission()
+		}
+		
+		
+	}
+	else{a="Notification Already Allowed"}
+    var data = {message: a};
+    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+}());
+</script>
+	    <!--snackbar script end-->
         <!-- Begin of Chaport Live Chat code -->
 	   
 <script type="text/javascript">
@@ -77,7 +107,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
     for="demo-menu-lower-right">
   <li  class="mdl-menu__item" onclick="document.querySelector('.chaport-launcher-button').click();">Chat With Me</li>
-  <li  class="mdl-menu__item" onclick="Notification.requestPermission()">Get Notified</li>
+  <li  class="mdl-menu__item"  id="demo-show-toast">Get Notified</li>
   <li disabled class="mdl-menu__item">Settings</li>
   <li disabled class="mdl-menu__item">Help</li>
 </ul>
@@ -149,6 +179,12 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
     </section>
 	
   </main>
+	<!--snackbar-->
+	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action" type="button"></button>
+</div>
+	<!--snackbar end-->
   <footer class="mdl-mini-footer" >
   <div class="mdl-mini-footer__left-section">
     <div class="mdl-logo">copyright 2020<br>  &copy All Rights Reserved by Arnav Kumar </div>
