@@ -28,7 +28,7 @@
         
 	 <!--snackbar for notifications-->
 	    <script>
-(function() {
+$(window).load(function() {
   'use strict';
   var a;
   
@@ -36,19 +36,15 @@
   var showToastButton = document.querySelector('#demo-show-toast');
   showToastButton.addEventListener('click', function() {
     'use strict';
-	if(Notification.permission=="default" || Notification.permission=="denied"){
+	if(Notification.permission=="default"){
 	Notification.requestPermission()
 	if(Notification.permission=="granted"){
 		a="Notification Allowed"
-		}
-		else if(Notification.permission=="denied"){
-		
-		a="OPPS! please Allow Notification"
-			Notification.requestPermission()
-		}
-		
-		
+		}		
 	}
+	  else if(Notification.permission=="denied"){
+		  a="OPPS! Notifications Blocked Allow From Your Browser"
+		  }
 	else{a="Notification Already Allowed"}
     var data = {message: a};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
