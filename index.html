@@ -176,7 +176,29 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
   </div>
 </footer>
 </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAwJ8-2teznpL8PaYdtaPASEmhfW54coWs",
+    authDomain: "arnav-kumar.firebaseapp.com",
+    databaseURL: "https://arnav-kumar.firebaseio.com",
+    projectId: "arnav-kumar",
+    storageBucket: "arnav-kumar.appspot.com",
+    messagingSenderId: "657354874850",
+    appId: "1:657354874850:web:211197e80a772d4f4ee3bb",
+    measurementId: "G-PKXEBF91SY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
      <!--snackbar for notifications-->
 	    <script>
 document.body.onload=(function() {
