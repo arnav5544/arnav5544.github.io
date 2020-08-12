@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+    overflow:;
+      background: #0098ff;
+      display: ;
+      height:100% !important;
+      margin: 0;
+      align-items:;
+      justify-content: center;
+      padding: 0px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    video {
+      background: black;
+      
+      max-width:35%;
+      margin: 0px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      padding: 0;
+    }
+    #localVideo{
+    background-color:white;
+    background-image: url(duggu.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    float:right;
+    transform:translatey();
+    margin:5px;
+    bottom:70px;
+    right:5px;
+    position:absolute;
+    
+    }
+    #remoteVideo{
+    max-width:100% !important;
+    margin:0px ;
+    max-height:100% !important;
+    width:100% !important;
+    height:100%;
+    
+    
+    }
+    
+    #controls{
+    width:100%;
+    height:1.5cm;
+    position:absolute;
+    bottom:10px;
+    display:none;
+    
+    }
+    #end_call{
+    
+    color:white;
+    background-color:red;
+    
+    
+    text-align:center;
+    
+    
+    
+    
+    }
+    #hangup{
+    width:100%;
+position:absolute;
+    display:block;
+    height:1.5cm;
+    width:1.5cm;
+    left:43%;
+    right:;
+    border:2px solid black;
+    bottom :70px;
+    display:none;
+    }
+    
+    .mdl-button--icon{
+    width:1.5cm;
+    height:1.5cm;
+
+    
+    
+    }
+    .copy {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: white;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div  id="text" class="copy"></div>
+ 
+  <video onclick="maine()" onchange="maine()" id="remoteVideo" autoplay></video><br/>
+   <video  id="localVideo" autoplay muted></video>
+   
+   <div id="hangup">
+   <!-- FAB button with ripple -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="end_call">
+  <i class="material-icons" style="font-size:30px; justify-content: center;text-align:center;transform:translate(-17px,-13px);">call_end</i>
+</button>
+</div>
+<br />
+<br/>
+   <div id="controls">
+   
+
+
+<!-- Icon button -->
+<button class="mdl-button mdl-js-button mdl-button--icon" style="left:1cm;position:absolute;color:white;">
+  <i class="material-icons" style="">mic_off</i>
+</button>
+
+<!-- Icon button -->
+<button class="mdl-button mdl-js-button mdl-button--icon" style="right:1cm;position:absolute;color:white; float:right;">
+  <i class="material-icons" style="">videocam_off</i>
+</button>
+
+
+   </div>
+   <script>
+   
+   
+   function maine(){
+   const hangup=document.getElementById("hangup")
+   const controls=document.getElementById("controls")
+  
+  function hide(){
+   hangup.style.display="none"
+   controls.style.display="none"
+   }
+   hangup.style.display="block"
+   controls.style.display="block"
+   setTimeout(hide,3000)
+   
+   }
+   
+   document.body.onload="maine()"
+   window.onload="maine()"
+   
+   
+   </script>
+  <script src="script.js"></script>
+</body>
+</html>
