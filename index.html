@@ -218,6 +218,13 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 // Create a storage reference from our storage service
 var storageRef = storage.ref();
 	    
+
+// Create a reference to 'mountains.jpg'
+var mountainsRef = storageRef.child('image.png');
+
+// Create a reference to 'images/mountains.jpg'
+var mountainImagesRef = storageRef.child('images/image.png');
+	
 	    </script>
 
  
