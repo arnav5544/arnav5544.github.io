@@ -124,7 +124,7 @@ position:absolute;
 
 <!-- Icon button -->
 <button class="mdl-button mdl-js-button mdl-button--icon" style="left:1cm;position:absolute;color:white;">
-  <i class="material-icons" style="">mic_off</i>
+  <i class="material-icons" style="">speaker_off</i>
 </button>
 
 <!-- Icon button -->
@@ -141,17 +141,17 @@ position:absolute;
    const remoteVideo=document.getElementById("remoteVideo")
    
 function toglePlay(){
-if(localVideo.played){
-localVideo.pause()
+if(remoteVideo.played){
+remoteVideo.pause()
 
 }
-else{localVideo.play()}
+else{remoteVideo.play()}
 }
 
 function togleMute(){
-if(localVideo.muted==false)
-{localVideo.muted=true}
-else{localVideo.muted=false}
+if(remoteVideo.muted==false)
+{remoteVideo.muted=true}
+else{remoteVideo.muted=false}
 
 }
    function maine(){
