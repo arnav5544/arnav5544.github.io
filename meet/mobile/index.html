@@ -81,7 +81,6 @@ position:absolute;
     width:1.5cm;
     left:43%;
     right:;
-    border:2px solid black;
     bottom :70px;
     display:none;
     }
@@ -114,7 +113,7 @@ position:absolute;
    <div id="hangup">
    <!-- FAB button with ripple -->
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="end_call">
-  <i class="material-icons" style="font-size:30px; justify-content: center;text-align:center;transform:translate(-17px,-13px);">call_end</i>
+  <i class="material-icons" style="font-size:30px; justify-content: center;text-align:center;transform:translate(-15px,-10px);">call_end</i>
 </button>
 </div>
 <br />
@@ -129,15 +128,24 @@ position:absolute;
 </button>
 
 <!-- Icon button -->
-<button class="mdl-button mdl-js-button mdl-button--icon" style="right:1cm;position:absolute;color:white; float:right;">
+<button class="mdl-button mdl-js-button mdl-button--icon" onclick="" style="right:1cm;position:absolute;color:white; float:right;">
   <i class="material-icons" style="">videocam_off</i>
 </button>
 
 
    </div>
    <script>
+   const hangup=document.getElementById("hangup")
+   const controls=document.getElementById("controls")
+   const localVideo=document.getElementById("localVideo")
+   const remoteVideo=document.getElementById("remoteVideo")
    
-   
+function toglePlay(){
+
+}
+function togleMute(){
+
+}
    function maine(){
    const hangup=document.getElementById("hangup")
    const controls=document.getElementById("controls")
