@@ -188,7 +188,10 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-
+   <!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+	    
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -204,14 +207,9 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-
 </script>
-	    <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js">
+	 
 	    <script>
-	   
-
   // Get a reference to the storage service, which is used to create references in your storage bucket
   var storage = firebase.storage();
 	 
@@ -223,37 +221,6 @@ var storageRef = storage.ref();
  
 	    	    
 	    
-<script>
-  
-
-	    
-
-// Retrieve Firebase Messaging object.
-const messaging = firebase.messaging();
-
-// Add the public key generated from the console here.
-messaging.usePublicVapidKey("BJM6QwLTX87LMYLOZFzyOWCMSEpidkXQlu8DqSB1XMfLC7ZVuzfb6l5oAGZAtH9trEe3Yg6q7Vtv_GxoYUAIeqk");
-
-// Get Instance ID token. Initially this makes a network call, once retrieved
-// subsequent calls to getToken will return from cache.
-messaging.getToken().then((currentToken) => {
-  if (currentToken) {
-    sendTokenToServer(currentToken);
-    updateUIForPushEnabled(currentToken);
-  } else {
-    // Show permission request.
-    console.log('No Instance ID token available. Request permission to generate one.');
-    // Show permission UI.
-    updateUIForPushPermissionRequired();
-    setTokenSentToServer(false);
-  }
-}).catch((err) => {
-  console.log('An error occurred while retrieving token. ', err);
-  showToken('Error retrieving Instance ID token. ', err);
-  setTokenSentToServer(false);
-});
-
-
 
      <!--snackbar for notifications-->
 	    <script>
