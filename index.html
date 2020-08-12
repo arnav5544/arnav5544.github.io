@@ -240,15 +240,7 @@ var storageRef = storage.ref();
           var percentage = (snapshot.bytesTransferred /
           snapshot.totalBytes) * 100;
           uploader.value = percentage;
-      },
-
-      function error(err) {
-
-      },
-      function complete () {
-      }
-      ),
-      });
+      },),});
 
 	    </script>
 
