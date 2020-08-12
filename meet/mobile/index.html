@@ -112,7 +112,7 @@ position:absolute;
    
    <div id="hangup">
    <!-- FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="end_call">
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="end_call" onclick="window.close()">
   <i class="material-icons" style="font-size:30px; justify-content: center;text-align:center;transform:translate(-15px,-10px);">call_end</i>
 </button>
 </div>
@@ -141,9 +141,17 @@ position:absolute;
    const remoteVideo=document.getElementById("remoteVideo")
    
 function toglePlay(){
+if(localVideo.played){
+localVideo.pause()
 
 }
+else{localVideo.play()}
+}
+
 function togleMute(){
+if(localVideo.muted==false)
+{localVideo.muted=true}
+else{localVideo.muted=false}
 
 }
    function maine(){
