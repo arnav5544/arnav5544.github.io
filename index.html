@@ -130,7 +130,10 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
              <li> <a href="whatsapp-qr">Whatsapp QR Code Generator</a></li>
         </ol>
         <p>Thanks for Visiting🙏.</p>
-          
+          <br/>
+	       <progress  value="0" max="100" id="uploader">0%</progress>
+	      
+    <input  type="file" value="upload" id="fileButton">
 	  </div>
     </section>
     <section class="mdl-layout__tab-panel" id="scroll-tab-2">
@@ -217,16 +220,36 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 	 
 // Create a storage reference from our storage service
 var storageRef = storage.ref();
-	  function sava(){
-// Create a reference to 'mountains.jpg'
-var mountainsRef = storageRef.child('image.png');
-
-// Create a reference to 'images/mountains.jpg'
-var mountainImagesRef = storageRef.child('images/image.png');
-	  }  
-	document.body.onload="sava()"
-
 	
+	
+ var uploader = document.getElementById('uploader');
+      var fileButton = document.getElementById ('fileButton');
+
+      fileButton.addEventListener('change', function (e){
+
+        var file = e.target.files[0];
+
+      var storageRef = firebase.storage().ref('images/'
+      + file.name);
+
+      var task = storageRef.put(file);
+
+      task.on('state_changed',
+
+          function progress(snapshot) {
+          var percentage = (snapshot.bytesTransferred /
+          snapshot.totalBytes) * 100;
+          uploader.value = percentage;
+      },
+
+      function error(err) {
+
+      },
+      function complete () {
+      }
+      ),
+      });
+
 	    </script>
 
  
