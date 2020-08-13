@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  	    <script src="mobile/script.js"></script>  
+
+<meta name="description" content="Video Calling by Arnav."/>       
+        
+<link rel="shortcut icon" type="image/x-icon" href="videocam-black-18dp.svg">
+
+<link rel="icon" type="image/x-icon" href="videocam-black-18dp.svg">
+
+<meta name="author" content="arnav kumar">
+  
   <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -128,7 +138,7 @@ position:absolute;
     }
   </style>
 </head>
-<body>
+<body onload="videoCall()">
 
   <div  id="text" class="copy"></div>
  
@@ -162,6 +172,7 @@ position:absolute;
   <div id="alert1"><p style="font-size:20px;" id="alert1p">Waiting for Other User...</p></div>
   <div id="alert2"><p style="font-size:10px;"id="alert2p"></p></div>
    <script>
+     document.head.body.title="Video Calling- "+localStorage.meetInput
    const hangup=document.getElementById("hangup")
    const controls=document.getElementById("controls")
    const localVideo=document.getElementById("localVideo")
@@ -170,7 +181,7 @@ position:absolute;
    const alert2=document.getElementById("alert2p")
    var mute=false
    var play=true
-window.onload="videoCall()"
+
 function toglePlay(){
 if(play==true){
 localVideo.pause()
