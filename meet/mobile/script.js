@@ -1,6 +1,6 @@
 // Generate random room name if needed
 
-if (window.location=="https://arnav5544.github.io/meet/mobile" && !location.hash) {
+if (window.location=="https://arnav5544.github.io/meet/mobile/" && !location.hash) {
   location.hash =localStorage.meetInput
 }
 
