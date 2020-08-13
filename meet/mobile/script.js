@@ -1,5 +1,5 @@
 // Generate random room name if needed
-var meetId=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+
 if (window.location=="https://arnav5544.github.io/meet/mobile" && !location.hash) {
   location.hash =localStorage.meetInput
 }
