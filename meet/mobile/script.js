@@ -1,8 +1,9 @@
 // Generate random room name if needed
-if (!location.hash) {
-  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+var meetId=Math.floor(Math.random() * 0xFFFFFF).toString(16);
+if (window.location=="https://arnav5544.github.io/meet/mobile" || window.location=="https://arnav5544.github.io/meet/desktop" && !location.hash) {
+  location.hash =sessionstorage.videoCallId
 }
- sessionStorage.videoCallId= location.hash.substring(1);
+ sessionStorage.videoCallId= meetId.substring(1);
 const roomHash = sessionStorage.videoCallId
 
 function videoCall(){
