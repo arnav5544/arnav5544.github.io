@@ -132,7 +132,7 @@ position:absolute;
 
   <div  id="text" class="copy"></div>
  
-  <video onclick="maine()" onplay="maine()" id="remoteVideo" autoplay></video><br/>
+  <video onclick="maine()" onplay=" alert1.innerHTML=''"onplay="maine()" id="remoteVideo" autoplay></video><br/>
    <video  id="localVideo" autoplay muted></video>
    
    <div id="hangup">
@@ -149,7 +149,7 @@ position:absolute;
 
 <!-- Icon button -->
 <button class="mdl-button mdl-js-button mdl-button--icon" onclick="togleMute()" style="left:1cm;position:absolute;color:white;">
-  <i class="material-icons" style="">mute</i>
+  <i class="material-icons" style="">volume_off</i>
 </button>
 
 <!-- Icon button -->
@@ -159,31 +159,37 @@ position:absolute;
 
 
    </div>
-  <div id="alert1"><p style="font-size:20px;">Waiting for Other User...</p></div>
-  <div id="alert2"><p style="font-size:10px;"></p></div>
+  <div id="alert1"><p style="font-size:20px;" id="alert1p">Waiting for Other User...</p></div>
+  <div id="alert2"><p style="font-size:10px;"id="alert2p"></p></div>
    <script>
    const hangup=document.getElementById("hangup")
    const controls=document.getElementById("controls")
    const localVideo=document.getElementById("localVideo")
    const remoteVideo=document.getElementById("remoteVideo")
+   const alert1=document.getElementById("alert1p")
+   const alert2=document.getElementById("alert2p")
    var mute=false
    var play=true
 function toglePlay(){
 if(play==true){
 localVideo.pause()
+  alert2.innerHTML="video paused"
 play=false
 }
 else{localVideo.play()
-    play=true}
+    play=true
+     alert2.innerHTML=""}
 }
 
 function togleMute(){
 if(mute==false)
 {remoteVideo.muted=true
 mute=true
+  alert1.innerHTML="video muted"
 }
 else{remoteVideo.muted=false
-    mute=false}
+    mute=false
+     alert2.innerHTML=""}
 
 }
    function maine(){
