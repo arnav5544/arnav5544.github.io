@@ -3,8 +3,8 @@ if (!location.hash) {
   location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 const roomHash = location.hash.substring(1);
-
-
+const videoCallId=roomHash
+function videoCall(){
 const drone = new ScaleDrone('qc0O3cJC7UhdcQo1');
 // Room name needs to be prefixed with 'observable-'
 const roomName = 'observable-' + roomHash;
@@ -113,4 +113,5 @@ function localDescCreated(desc) {
     () => sendMessage({'sdp': pc.localDescription}),
     onError
   );
+}
 }
