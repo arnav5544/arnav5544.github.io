@@ -158,7 +158,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
     function generateCode(){
      var meetCode= document.getElementById("meetCode")
      var meetCodeContainer= document.getElementById("meetCodeContainer")
-      meetCode.value=videoCallId
+      meetCode.value=sessionStorage.videoCallId
       meetCodeContainer.style.display="block"
       document.getElementById("generatorButton").style.display="none"
         
