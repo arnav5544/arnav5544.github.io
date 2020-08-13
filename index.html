@@ -223,26 +223,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 // Create a storage reference from our storage service
 var storageRef = storage.ref();
 	
-	
- var uploader = document.getElementById('uploader');
-      var fileButton = document.getElementById ('fileButton');
 
-      fileButton.addEventListener('change', function (e){
-
-        var file = e.target.files[0];
-
-      var storageRef = firebase.storage().ref('images/'
-      + file.name);
-
-      var task = storageRef.put(file);
-
-      task.on('state_changed',
-
-          function progress(snapshot) {
-          var percentage = (snapshot.bytesTransferred /
-          snapshot.totalBytes) * 100;
-          uploader.value = percentage;
-      },);});
 
 	    </script>
 
