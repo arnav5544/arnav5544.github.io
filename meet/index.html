@@ -159,15 +159,16 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
     function generateCode(){
      var meetCode= document.getElementById("meetCode")
      var meetCodeContainer= document.getElementById("meetCodeContainer")
-      meetCode.value=sessionStorage.videoCallId
+      meetCode.value=localStorage.videoCallId
       meetCodeContainer.style.display="block"
       document.getElementById("generatorButton").style.display="none"
-        
+       document.getElementById("meetInput").value=localStorage.videoCallId
         
         
     }
      function joinCall(){
              var meetInput= document.getElementById("meetInput")
+	     localStorage.meetInput=meetInput.value
              if(meetInput.value.length==7){
          window.location.assign("https://arnav5544.github.io/meet/mobile")
              }
