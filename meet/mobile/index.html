@@ -100,7 +100,27 @@ position:absolute;
       font-size: 18px;
       color: white;
     }
+    #alert1{
+    width:100%;
+      height:2cm;
+      position:absolute;
+      bottom:60%;
+      color:white;
+     border:2px solid white;
     
+    }
+    #alert2{
+    width:30%;
+      height:1cm;
+      font-size:10px;
+      color:white;
+      position:absolute;
+      bottom:100px;
+      border:2px solid white;
+    
+    
+    
+    }
   </style>
 </head>
 <body>
@@ -141,18 +161,21 @@ position:absolute;
    const controls=document.getElementById("controls")
    const localVideo=document.getElementById("localVideo")
    const remoteVideo=document.getElementById("remoteVideo")
-   
+   var mute=false
+   var play=true
 function toglePlay(){
-if(localVideo.played==true){
+if(play==true){
 localVideo.pause()
-
+play=false
 }
 else{localVideo.play()}
 }
 
 function togleMute(){
-if(localVideo.muted==false)
-{localVideo.muted=true}
+if(mute==false)
+{localVideo.muted=true
+mute=true
+}
 else{localVideo.muted=false}
 
 }
