@@ -110,8 +110,9 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input  class="mdl-textfield__input" type="text" maxlength="7"  id="meetInput" >
-    <label class="mdl-textfield__label" for="meetInput">Enter a Meeting Code...</label>
+	  <label  for="meetInput">Enter a Meeting Code...</label>
+    <input  class="mdl-textfield__input" type="text" maxlength="6"  id="meetInput" >
+    
    
   </div>
 <!-- Accent-colored raised button with ripple -->
@@ -127,6 +128,11 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
  <div style="display:none;" id="meetCodeContainer" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	 <label  style="color:dodgerblue;" for="meetCode">Your Meeting Code...</label>
     <input disabled class="mdl-textfield__input" type="text" value="" maxlength="7" style="color:black;margin-left:10px;" id="meetCode" >
+	 <!-- Flat button with ripple -->
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+  <img src="whatsapp.png" style="width:25px;height:35px;"> Share on WhatsApp
+</button>
+
     
  
    
