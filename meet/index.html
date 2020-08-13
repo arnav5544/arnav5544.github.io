@@ -157,6 +157,8 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 </div>
 <script>
     function generateCode(){
+	    rmeetId="#"+meetId
+localStorage.videoCallId= rmeetId.substring(1);
      var meetCode= document.getElementById("meetCode")
      var meetCodeContainer= document.getElementById("meetCodeContainer")
       meetCode.value=localStorage.videoCallId
