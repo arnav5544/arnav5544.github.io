@@ -40,7 +40,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
   <style>
 	    @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .chaport-container .chaport-launcher .chaport-launcher-button .chaport-launcher-chat-icon {
-        background-image:url("./chat-white-18dp.svg") !important;
+        background-image:url("chat-white-18dp.svg") !important;
 	    width:55% !important;
 	    height:55% !important;
     }!important
@@ -115,26 +115,22 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
    
   </div>
 <!-- Accent-colored raised button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="joinCall()">
   Join Call
 </button>
 <h6 style="position:absolute;left:20px;">OR</h6><br/><br/><br/><br/>
 	   <div id="generate">
 	<!-- Accent-colored raised button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+<button style="margin:10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="generateCode()" id="generatorButton">
   Generete a Meeting Code
 </button>
- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input disabled class="mdl-textfield__input" type="text" value="catr" maxlength="7" style="color:black;" id="meetCode" >
+ <div style="display:none;" id="meetCodeContainer" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input disabled class="mdl-textfield__input" type="text" value="" maxlength="7" style="color:black;" id="meetCode" >
     <label class="mdl-textfield__label" style="color:dodgerblue;" for="meetCode">Your Meeting Code...</label>
  
    
   </div>
-     <!-- Icon button -->
-<button class="mdl-button mdl-js-button mdl-button--icon" id="copyButton" onclick="textCopy()">
-  <i class="material-icons">content_copy</i>
-</button>
-
+   
 </div>
 	  </div>
 	    <footer style="" class="mdl-mini-footer" >
@@ -149,21 +145,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 </footer>
   </main>
  
-   <script>
-function textCopy() {
-  var copyText = document.getElementById("meetCode");
-  var snackbarContainer = document.querySelector('#demo-toast-example');
-  var copyButton= document.getElementById("copyButton");
   
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  copyButton.class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
-   var copyAlert = {message:"Copied Your Meeting Code To Clipboard" };
-    snackbarContainer.MaterialSnackbar.showSnackbar(copyAlert);
-  
-}
-</script>
 	<!--snackbar-->
 	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
   <div class="mdl-snackbar__text"></div>
@@ -172,7 +154,25 @@ function textCopy() {
 	<!--snackbar end-->
    
 </div>
-
+<script>
+    function generateCode(){
+     var meetCode= document.getElementById("meetCode")
+     var meetCodeContainer= document.getElementById("meetCodeContainer")
+      meetCode.value=videoCallId
+      meetCodeContainer.style.display="block"
+      document.getElementById("generatorButton").style.display="none"
+        
+        
+        
+    }
+     function joinCall(){
+             var meetInput= document.getElementById("meetInput")
+             if(meetInput.value.length==7){
+         window.location.assign("https://arnav5544.github.io/meet/mobile")
+             }
+             else{alert("please Enter a Meeting Id ")}
+     }
+</script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 
