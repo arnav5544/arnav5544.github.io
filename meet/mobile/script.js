@@ -2,8 +2,9 @@
 if (!location.hash) {
   location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
-const roomHash = location.hash.substring(1);
-const videoCallId=roomHash
+ sessionStorage.videoCallId= location.hash.substring(1);
+const roomHash = sessionStorage.videoCallId
+
 function videoCall(){
 const drone = new ScaleDrone('qc0O3cJC7UhdcQo1');
 // Room name needs to be prefixed with 'observable-'
