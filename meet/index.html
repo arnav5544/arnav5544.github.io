@@ -111,7 +111,7 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 	  <label  for="meetInput">Enter a Meeting Code...</label>
-    <input onchange="meetInput()" class="mdl-textfield__input" type="text" maxlength="6"  id="meetInput" >
+    <input class="mdl-textfield__input" type="text" maxlength="6"  id="meetInput" >
     
    
   </div>
@@ -164,6 +164,7 @@ function meetInput(){
 meetInputVal= document.getElementById("meetInput")
 
 }
+setInterval(meetInput,500);
 	var sendData=encodeURI("Your Friend has invited you on a Video Call.\nGo to https://arnav5544.github.io/meet and enter the code: "+meetInputVal+"  to join the call")
 	document.getElementById("whatsapp-share").href="https://api.whatsapp.com/send?phone=&text="+sendData+"&source=&data=&app_absent="
     function generateCode(){
