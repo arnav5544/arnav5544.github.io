@@ -228,7 +228,10 @@ const messaging=firebase.messaging();
 	.catch(function(){
 	console.log('Error Occured')
 	})
+	messaging.onMessage(function(payload){
+	console.log('onMessage: ',payload)
 	
+	});
 	    </script>
 
  
