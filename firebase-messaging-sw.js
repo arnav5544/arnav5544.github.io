@@ -17,7 +17,7 @@ firebase.initializeApp({
     messagingSenderId: "657354874850",
     appId: "1:657354874850:web:211197e80a772d4f4ee3bb",
     measurementId: "G-PKXEBF91SY"
-  };
+  });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
