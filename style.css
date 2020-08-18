@@ -1,15 +1,15 @@
 .full_image{
 
 display:flex;
-
+  align-items:center;
 
 }
 #header_image{
   position:relative;
-  align-items:center;
+
+  margin:20px;
   
-  
-  width:90%;
+  width:80%;
   
   
   
