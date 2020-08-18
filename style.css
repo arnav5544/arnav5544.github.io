@@ -2,14 +2,13 @@
 
 display:flex;
   align-items:center;
+  justify-content:center;
 
 }
 #header_image{
-  position:relative;
-
   margin:20px;
   
-  width:80%;
+  width:60%;
   
   
   
