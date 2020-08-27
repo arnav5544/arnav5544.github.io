@@ -1,0 +1,22 @@
+{
+  "name": "Arnav Kumar",
+  "short_name": "Arnav Kumar",
+  "description": "A website made By Arnav Kumar ",
+  "icons": [
+    {
+      "src": "image.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    
+    {
+      "src": "image.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://arnav5544.github.io/index.html",
+  "display": "fullscreen",
+  "theme_color": "#1E90FF",
+  "background_color": "#1E90FF"
+}
