@@ -8,10 +8,7 @@ self.addEventListener('install', function(e) {
        'style.css',
        'image.png',
        'head.jpeg',
-       'meet',
-      'divisibility-checker',
-      'whatsapp-qr',
-       'calculator'
+      'https://arnav5544.github.io/meet'
      ]);
    })
  );
