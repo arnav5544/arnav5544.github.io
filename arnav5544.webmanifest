@@ -17,6 +17,6 @@
   ],
   "start_url": "https://arnav5544.github.io/",
   "display": "standalone",
-  "theme_color": "#1E90FF",
-  "background_color": "rbg(240,240,240)"
+  "theme_color": "#000000",
+  "background_color": "#6633ff"
 }
