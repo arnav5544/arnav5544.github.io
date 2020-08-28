@@ -4,13 +4,13 @@
   "description": "A website made By Arnav Kumar ",
   "icons": [
     {
-      "src": "image.png",
+      "src": "arnav.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     
     {
-      "src": "image.png",
+      "src": "arnav.png",
       "sizes": "512x512",
       "type": "image/png"
     }
