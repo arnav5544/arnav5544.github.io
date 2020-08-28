@@ -7,8 +7,10 @@ self.addEventListener('install', function(e) {
        'script.js',
        'style.css',
        'image.png',
-       'head.jpg',
+       'head.jpeg',
        'meet',
+      'divisibility-checker',
+      'whatsapp-qr',
        'calculator'
      ]);
    })
