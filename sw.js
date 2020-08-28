@@ -8,7 +8,7 @@ self.addEventListener('install', function(e) {
        'style.css',
        'image.png',
        'head.jpeg',
-      'https://arnav5544.github.io/meet'
+     
      ]);
    })
  );
