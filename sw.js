@@ -1,15 +1,15 @@
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('fox-store').then(function(cache) {
+   caches.open('arnav5544').then(function(cache) {
      return cache.addAll([
-       '/arnav5544.github.io',
-       '/arnav5544.github.io/index.html',
-       '/arnav5544.github.io/script.js',
-       '/arnav5544.github.io/style.css',
-       '/arnav5544.github.io/image.png',
-       '/arnav5544.github.io/head.jpg',
-       '/arnav5544.github.io/meet',
-       '/arnav5544.github.io/calculator'
+       'https://arnav5544.github.io',
+       'index.html',
+       'script.js',
+       'style.css',
+       'image.png',
+       'head.jpg',
+       'meet',
+       'calculator'
      ]);
    })
  );
