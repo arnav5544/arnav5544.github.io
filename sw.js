@@ -8,7 +8,9 @@ self.addEventListener('install', function(e) {
        'style.css',
        'image.png',
        'head.jpeg',
-     
+     'chat-white-18dp.svg',
+'arnav.png',
+'arnav5544.webmanifest',
      ]);
    })
  );
