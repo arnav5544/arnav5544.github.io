@@ -441,8 +441,9 @@ Planets</span></h2>
   firebase.analytics();
    var perf = firebase.performance();
 const messaging=firebase.messaging();
-	messaging.requestPermission()
-		.then(function(){
+
+	setTimeout(function(){messaging.requestPermission()
+.then(function(){
 	console.log('Have Permission')
 		return messaging.getToken();
 	})
@@ -456,6 +457,10 @@ const messaging=firebase.messaging();
 	console.log('onMessage: ',payload)
 	
 	});
+
+
+},10000)
+		
 	    </script>
 <script>
 	
