@@ -35,7 +35,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
   const notificationTitle = '';
   const notificationOptions = {
     icon: 'arnav.png'
-    badge:'arnav.png'
+    
   };
 
   return self.registration.showNotification(notificationTitle,
