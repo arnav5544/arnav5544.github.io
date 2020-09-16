@@ -22,21 +22,23 @@ firebase.initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 
-  self.addEventListener('push', (payload)=> {
-    let data = {};
-    if (payload) {
-      data = payload
-        console.log(payload.data.json());
+  self.addEventListener('push', (data)=> {
+    let payload = {};
+    if (payload.data) {
+      payload = data.data.json()
+        
     }
 
-    console.log('SW: Push received', data)
+    console.log('SW: Push received \n', data)
 
-    if (data.notification && data.notification.title) {
-      self.registration.showNotification(data.notification.title, {
-        body: data.notification.body,
+    if (payload.notification && payload.notification.title) {
+      self.registration.showNotification(payload.notification.title, {
+        body: payload.notification.body,
         icon: 'arnav.png',
         badge:'arnav.png',
-        data:data.data
+        image:payload.notification.image,
+        data:payload.data,
+        actions:payload.data.actions
       })
     } else {
       console.log('SW: No notification payload, not showing notification')
