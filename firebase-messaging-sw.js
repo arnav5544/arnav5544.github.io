@@ -24,7 +24,7 @@ firebase.initializeApp({
 
   self.addEventListener('push', (data)=> {
     let payload = {};
-    if (payload.data) {
+    if (data.data) {
       payload = data.data.json()
         
     }
