@@ -24,11 +24,11 @@ firebase.initializeApp({
 self.addEventListener('notificationclick', function(event) {
     console.log('SW: Clicked notification', event)
 
-    let link = event.data.json().data.link
+    let data = event.notification.data
 
     event.notification.close()
 
-    self.clients.openWindow(link)
+    self.clients.openWindow(event.notification.data.link)
   })
 
   self.addEventListener('push', (data)=> {
