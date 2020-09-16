@@ -21,24 +21,23 @@ firebase.initializeApp({
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
-const messaging = firebase.messaging();
 
+  self.addEventListener('push', (payload)=> {
+    let payload = {}
+    if (payload) {
+      payload = payload.json()
+    }
 
-// Handle incoming messages. Called when:
-// - a message is received while the app has focus
-// - the user clicks on an app notification created by a service worker
-//   `messaging.setBackgroundMessageHandler` handler.
-// [START background_handler]
- firebase.messaging().setBackgroundMessageHandler(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  var title = payload.data.title;
-  var options = {
-    body: payload.notification.body,
-    icon: '/arnav.png',
-    badge:'/arnav.png'
-  };
+    console.log('SW: Push received', data)
 
-  return self.registration.showNotification(title,options);
-});
-// [END background_handler]
+    if (payload.notification && payload.notification.title) {
+      self.registration.showNotification(payload.notification.title, {
+        body: payload.notification.body,
+        icon: 'arnav.png',
+        badge:'arnav.png',
+        data:payload.data
+      })
+    } else {
+      console.log('SW: No notification payload, not showing notification')
+    }
+  })
