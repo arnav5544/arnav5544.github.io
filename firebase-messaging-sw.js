@@ -29,14 +29,14 @@ const messaging = firebase.messaging();
 // - the user clicks on an app notification created by a service worker
 //   `messaging.setBackgroundMessageHandler` handler.
 // [START background_handler]
-messaging.setBackgroundMessageHandler(function(payload) {
+ firebase.messaging().setBackgroundMessageHandler(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: 'arnav.png',
-    badge:'arnav.png'
+    icon: '/arnav.png',
+    badge:'/arnav.png'
   };
 
   return self.registration.showNotification(notificationTitle,
