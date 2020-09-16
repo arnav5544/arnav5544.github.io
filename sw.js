@@ -53,7 +53,7 @@ self.addEventListener('notificationclick', function(event) {
         body: data.notification.body,
         icon: 'arnav.png',
         badge:'arnav.png',
-        data.data
+        data:data.data
       })
     } else {
       console.log('SW: No notification payload, not showing notification')
