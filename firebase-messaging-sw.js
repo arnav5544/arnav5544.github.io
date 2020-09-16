@@ -29,7 +29,7 @@ firebase.initializeApp({
         
     }
 
-    console.log('SW: Push received \n', data)
+    console.log('SW: Push received \n', payload)
 
     if (payload.notification && payload.notification.title) {
       self.registration.showNotification(payload.notification.title, {
