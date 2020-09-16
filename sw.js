@@ -26,36 +26,3 @@ self.addEventListener('fetch', function(e) {
 });
 
 
-
-
-
-self.addEventListener('notificationclick', function(event) {
-    console.log('SW: Clicked notification', event)
-
-    let data = event.notification.data
-
-    event.notification.close()
-
-    self.clients.openWindow(event.data.link)
-  })
-
-  self.addEventListener('push', event => {
-    let data = {}
-
-    if (event.data) {
-      data = event.json()
-    }
-
-    console.log('SW: Push received', data)
-
-    if (data.notification || data.data) {
-      self.registration.showNotification(data.notification.title, {
-        body: data.notification.body,
-        icon: 'arnav.png',
-        badge:'arnav.png',
-        data:data.data
-      })
-    } else {
-      console.log('SW: No notification payload, not showing notification')
-    }
-  })
