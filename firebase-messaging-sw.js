@@ -21,6 +21,15 @@ firebase.initializeApp({
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
+self.addEventListener('notificationclick', function(event) {
+    console.log('SW: Clicked notification', event)
+
+    let link = event.data.json().data.link
+
+    event.notification.close()
+
+    self.clients.openWindow(link)
+  })
 
   self.addEventListener('push', (data)=> {
     let payload = {};
