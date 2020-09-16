@@ -23,19 +23,19 @@ firebase.initializeApp({
 // messages.
 
   self.addEventListener('push', (payload)=> {
-    let payload = {}
+    let data = {};
     if (payload) {
-      payload = payload.json()
+      data = payload.json()
     }
 
     console.log('SW: Push received', data)
 
-    if (payload.notification && payload.notification.title) {
-      self.registration.showNotification(payload.notification.title, {
-        body: payload.notification.body,
+    if (data.notification && data.notification.title) {
+      self.registration.showNotification(data.notification.title, {
+        body: data.notification.body,
         icon: 'arnav.png',
         badge:'arnav.png',
-        data:payload.data
+        data:data.data
       })
     } else {
       console.log('SW: No notification payload, not showing notification')
