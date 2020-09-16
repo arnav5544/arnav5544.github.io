@@ -25,7 +25,8 @@ firebase.initializeApp({
   self.addEventListener('push', (payload)=> {
     let data = {};
     if (payload) {
-      data = payload.json()
+      data = payload
+        console.log(payload);
     }
 
     console.log('SW: Push received', data)
