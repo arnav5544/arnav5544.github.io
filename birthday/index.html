@@ -1,1 +1,109 @@
+<!DOCTYPE html>
 
+<html>
+
+    <head>
+
+            
+
+<link rel="shortcut icon" type="image/x-icon" href="/arnav.png">
+
+<link rel="icon" type="image/x-icon" href="/arnav.png">
+
+<link rel="stylesheet" href="style.css">
+
+<meta name="author" content="arnav kumar">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js"></script>
+
+        <title>Happy Birthday to Me</title>
+
+    </head>
+
+    <body>
+
+    <div id="gif">🎂</div>
+
+          <h1><span id="wrap"></span><span id="cursor1">|</span></h1>
+
+          
+
+          <div id="wish">
+
+              <label for="text">Wish me Happy Birthday</label>
+
+              <input id="text" name="text" type="text" placeholder="Type here...">
+
+              <button id="send" onclick="send()">Send Your Wishes to Me</button>
+
+          </div>
+
+          <div id="other"><center>Other's Greetings</center><hr/><h2 id="load">Loading...</h2></div>
+
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+
+        <script>
+
+  // Your web app's Firebase configuration
+
+  var firebaseConfig = {
+
+    apiKey: "AIzaSyAwJ8-2teznpL8PaYdtaPASEmhfW54coWs",
+
+    authDomain: "arnav-kumar.firebaseapp.com",
+
+    databaseURL: "https://arnav-kumar.firebaseio.com",
+
+    projectId: "arnav-kumar",
+
+    storageBucket: "arnav-kumar.appspot.com",
+
+    messagingSenderId: "657354874850",
+
+    appId: "1:657354874850:web:211197e80a772d4f4ee3bb",
+
+    measurementId: "G-PKXEBF91SY"
+
+  };
+
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+
+  
+
+  function greet(name,greet) {firebase.database().ref('birthday-wishes/' + name).set(greet);}
+
+function getData(){
+
+firebase.database().ref('birthday-wishes').on('value', function(snapshot){
+
+peoples=snapshot.val()
+
+document.getElementById("load").style.display="none"
+
+document.getElementById("other").innerHTML=`<center>Other's Greetings</center><hr/>`
+
+for(i in peoples){
+
+    document.getElementById("other").innerHTML+="<p>"+i+" : "+peoples[i]+"</p>"
+
+}
+
+    
+
+    
+
+    
+
+});}
+
+  </script>                               
+
+</html>
