@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="script.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="bulb.png">
+<link rel="icon" type="image/x-icon" href="bulb.png">
+<link rel="manifest" href="switch-the-bulb.webmanifest">
+<meta name="theme-color" content="#000">
+<meta name="author" content="arnav kumar">
+<meta name="keywords" content="💡,💡💡,switch the bulb,Switch The Bulb,💡switch the bulb💡,💡switch the bulb,switch the bulb💡,switch-the-bulb,switch_the_bulb,💡💡💡,💡💡,💡💡💡💡,💡💡💡💡💡,bulb,switch-the-bulb-game,switch the bulb game,💡switch the bulb game💡,💡switch the bulb game,switch the bulb game💡">
+<meta name="description" content="Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>💡Switch The Bulb Game💡</title>
+        <style>
+          body {
+    margin:0;
+    background:linear-gradient(to right,tomato,deeppink);
+    font-family:sans-serif;
+}
+*{
+    margin:0;
+}
+#on{
+width:105px;
+    display:none;
+    transform:translatex(2px);
+}
+#off{
+    width:100px;
+}
+#holder{
+
+
+}
+#main{
+    display:none;
+    width:100vw;
+    height:100vh;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction:column;
+
+}
+#switch{
+    width:100px;
+    height:200px;
+    border-radius:3px;
+    border:2px solid black;
+    margin:30px;
+
+}
+#up{
+    width:90px;
+    height:95px;
+    background:linear-gradient(black,grey);
+    margin:5px 5px 0 5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+#down{
+    width:90px;
+    height:95px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 5px 5px 5px;
+}
+#frame{
+    display:inherit;
+    align-items:center;
+    justify-content:center;
+    border-radius:3px;
+    border:2px dashed black;
+    padding:20px;
+    background-color:white;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+
+}
+#scoreboard{
+    border:2px solid black;
+}
+h1,h2{
+    margin:20px;
+    color:white;
+}
+#pop{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:0;
+    top:0;
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:10000;
+}
+#over{
+    width:80vw;
+    height:80vh;
+    background-color:white;
+    border-radius:10px;
+    color:red;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+}
+button{
+    font-size:25px;
+    border:0;
+    outline:0;
+    background-color:dodgerblue;
+    color:white;
+    margin:30px;
+    padding:10px;
+    border-radius:3px;
+}
+button:active{
+    transform:scale(0.95);
+}
+.m1{
+    color:tomato;
+    margin:30px;
+}
+#how{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+
+    flex-direction:column;
+    justify-content:center;
+    position:absolute;
+    left:0;
+    top:0;
+    padding:10px;
+    background:linear-gradient(to right,tomato,deeppink);
+}
+p{
+    font-size:1.3em;
+    margin:5px 10px;
+    color:white;
+}
+
+#scoreShare{
+    background-color:white;
+    border:2px solid black;
+      color:black;
+}
+#install{
+  position: absolute;
+      right: 0px;
+      top: 0px;
+      margin: 5px;
+      z-index: 999999;
+      font-size: 15px;
+      background-color: black;
+}
+        </style>
+    </head>
+    <body>
+      <div>
+        <button id="install" class="add-button">
+<img src="install.svg" style="width:20px;"> Install
+        </button>
+
+      </div>
+    <div id="how">
+        <h1 style="margin:0;font-size:1.8em;">💡Switch The Bulb Game💡</h1>
+        <div>
+        <h2>How To Play:</h2>
+        <p>To play the game click on the switch and turn the bulb on and off and beat the high score.<br/>Your total time is 1 minute.Tap the switch as much as you can in 1 minute!<br/>After Every 100 points you will get 10 bonus points!<br/>This Game Improves Your Concentration and Makes Your Hand Faster.</p></div>
+        <button id="start">Start Game</button>
+    </div>
+    <div id="pop">
+        <div id="over">
+
+            <h1 class="m1">Game Over</h1>
+            <h1 class="m1" id="overScore"></h1>
+            <button id="replay">Play Again</button>
+                 <a id="whatsapp-share" target="_blank">
+<button onclick="shareScore()" id="scoreShare">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNLjA1NyAyNGwxLjY4Ny02LjE2M2MtMS4wNDEtMS44MDQtMS41ODgtMy44NDktMS41ODctNS45NDYuMDAzLTYuNTU2IDUuMzM4LTExLjg5MSAxMS44OTMtMTEuODkxIDMuMTgxLjAwMSA2LjE2NyAxLjI0IDguNDEzIDMuNDg4IDIuMjQ1IDIuMjQ4IDMuNDgxIDUuMjM2IDMuNDggOC40MTQtLjAwMyA2LjU1Ny01LjMzOCAxMS44OTItMTEuODkzIDExLjg5Mi0xLjk5LS4wMDEtMy45NTEtLjUtNS42ODgtMS40NDhsLTYuMzA1IDEuNjU0em02LjU5Ny0zLjgwN2MxLjY3Ni45OTUgMy4yNzYgMS41OTEgNS4zOTIgMS41OTIgNS40NDggMCA5Ljg4Ni00LjQzNCA5Ljg4OS05Ljg4NS4wMDItNS40NjItNC40MTUtOS44OS05Ljg4MS05Ljg5Mi01LjQ1MiAwLTkuODg3IDQuNDM0LTkuODg5IDkuODg0LS4wMDEgMi4yMjUuNjUxIDMuODkxIDEuNzQ2IDUuNjM0bC0uOTk5IDMuNjQ4IDMuNzQyLS45ODF6bTExLjM4Ny01LjQ2NGMtLjA3NC0uMTI0LS4yNzItLjE5OC0uNTctLjM0Ny0uMjk3LS4xNDktMS43NTgtLjg2OC0yLjAzMS0uOTY3LS4yNzItLjA5OS0uNDctLjE0OS0uNjY5LjE0OS0uMTk4LjI5Ny0uNzY4Ljk2Ny0uOTQxIDEuMTY1LS4xNzMuMTk4LS4zNDcuMjIzLS42NDQuMDc0LS4yOTctLjE0OS0xLjI1NS0uNDYyLTIuMzktMS40NzUtLjg4My0uNzg4LTEuNDgtMS43NjEtMS42NTMtMi4wNTktLjE3My0uMjk3LS4wMTgtLjQ1OC4xMy0uNjA2LjEzNC0uMTMzLjI5Ny0uMzQ3LjQ0Ni0uNTIxLjE1MS0uMTcyLjItLjI5Ni4zLS40OTUuMDk5LS4xOTguMDUtLjM3Mi0uMDI1LS41MjEtLjA3NS0uMTQ4LS42NjktMS42MTEtLjkxNi0yLjIwNi0uMjQyLS41NzktLjQ4Ny0uNTAxLS42NjktLjUxbC0uNTctLjAxYy0uMTk4IDAtLjUyLjA3NC0uNzkyLjM3MnMtMS4wNCAxLjAxNi0xLjA0IDIuNDc5IDEuMDY1IDIuODc2IDEuMjEzIDMuMDc0Yy4xNDkuMTk4IDIuMDk1IDMuMiA1LjA3NiA0LjQ4Ny43MDkuMzA2IDEuMjYzLjQ4OSAxLjY5NC42MjYuNzEyLjIyNiAxLjM2LjE5NCAxLjg3Mi4xMTguNTcxLS4wODUgMS43NTgtLjcxOSAyLjAwNi0xLjQxMy4yNDgtLjY5NS4yNDgtMS4yOS4xNzMtMS40MTR6Ii8+PC9zdmc+"> Share Your Score
+         </button></a>
+            <div> </div>
+            <div> </div>
+            <div></div>
+        </div>
+    </div>
+    <div id="main">
+   <div id="scorboard">
+      <h1 id="high">High Score : <span style="color:lightGreen;">Loading...</span></h1>
+    <h1 id="score">Score : <span style="color:lightgreen;">0</span></h1><h1 id="time">Time Left : <span style="color:lightgreen;">60s</span></h1>
+    </div>
+    <div id="frame">
+    <div id="holder">
+        <img id="off" src="OFFbulb.jpg">
+        <img id="on" src="ONbulb.jpg">
+        </div>
+        <div id="switch"><div id="up">OFF</div><div id="down">ON</div></div>
+        </div>
+        </div>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <script>
+    eval(unescape(`%0Avar%20highScore%3B%0A%20%20%20%20%20%20%20%20//%20Your%20web%20app%27s%20Firebase%20configuration%0A%20%20var%20firebaseConfig%20%3D%20%7B%0A%20%20%20%20apiKey%3A%20%22AIzaSyAwJ8-2teznpL8PaYdtaPASEmhfW54coWs%22%2C%0A%20%20%20%20authDomain%3A%20%22arnav-kumar.firebaseapp.com%22%2C%0A%20%20%20%20databaseURL%3A%20%22https%3A//arnav-kumar.firebaseio.com%22%2C%0A%20%20%20%20projectId%3A%20%22arnav-kumar%22%2C%0A%20%20%20%20storageBucket%3A%20%22arnav-kumar.appspot.com%22%2C%0A%20%20%20%20messagingSenderId%3A%20%22657354874850%22%2C%0A%20%20%20%20appId%3A%20%221%3A657354874850%3Aweb%3A211197e80a772d4f4ee3bb%22%2C%0A%20%20%20%20measurementId%3A%20%22G-PKXEBF91SY%22%0A%20%20%7D%3B%0A%20%20//%20Initialize%20Firebase%0A%20%20firebase.initializeApp%28firebaseConfig%29%3B%0A%0A%20%20function%20setHighScore%28score%29%20%7B%0A%20%20var%20name%3Dscore.score%0A%20%20var%20score2%3Dscore.name%3B%0A%20%20if%28score2%3D%3D%22%22%7C%7Cscore2%3D%3D%22undefined%22%7C%7Cscore2%3D%3Dnull%29%7Bscore2%3D%22anonumous%22%7D%0A%20%20firebase.database%28%29.ref%28%27bulb-game-highScore%27%29.set%28%7Bname%3Ascore2%2Cscore%3Aname%7D%29%3B%0A%0A%20%20%7D%0A%0Afirebase.database%28%29.ref%28%27bulb-game-highScore%27%29.on%28%27value%27%2C%20function%28snapshot%29%7B%0A%20var%20data%3Dsnapshot.val%28%29%0Avar%20scoreHolder%3Ddata.name%3B%0AhighScore%3Ddata.score%3B%0Adocument.getElementById%28%22high%22%29.innerHTML%3D%22High%20Score%20%3A%20%3Cspan%20style%3D%27color%3Alightgreen%3B%27%3E%22+highScore+%22%3C/span%3E%20by%20%3Cspan%20style%3D%27color%3Ayellow%3B%27%3E%22+scoreHolder+%22%3C/span%3E%22%0A%0A%7D%29%3B%0A%0A%0A%0A%0A%0A%0A`))
+
+var bool=0;
+var score=0;
+var time=60
+var ino;
+var highBool=true;
+onload=()=>{
+document.getElementById("start").addEventListener("click",()=>{
+document.getElementById("how").style.display="none"
+document.getElementById("main").style.display="flex"
+setInterval(function(){
+    if(score>highScore && time==0 && highBool==true && !(localStorage.playerName)){
+       var playerName=prompt("🎊🎊🎉🎉🥳🥳 Hey You Just Broke the High Score!\nPlease Enter Your Nickname.🎊🎊🎉🎉🥳🥳")
+       localStorage.playerName=playerName;
+       setHighScore({name:localStorage.playerName,score:score})
+       highBool==false
+    }
+
+    if(score>highScore && time==0 && highBool==true && localStorage.playerName){
+      alert("🎊🎊🎉🎉🥳🥳 Hey You Just Broke the High Score!🎊🎊🎉🎉🥳🥳")
+       setHighScore({name:localStorage.playerName,score:score})
+       highBool==false
+    }
+
+},1000)
+document.getElementById("switch").addEventListener("click",function(){toggle()})
+document.getElementById("replay").addEventListener("click",function(){replay()})
+setInterval(function(){
+if(time!==0){
+time--;
+document.getElementById("time").innerHTML="Time Left : <span style='color:lightgreen;'> " +time+"s</span>"
+
+
+    }
+    if(time==0){
+    document.getElementById("overScore").innerHTML="Your Score is <span style='color:dodgerblue;'> " +score+"</span>"
+        document.getElementById("pop").style.display="flex"
+
+    }
+
+
+
+},1000)
+});
+
+
+
+}
+
+function shareScore(){
+
+
+    var sendData=encodeURI("I have played Switch the Bulb Game and my best score is "+score+" i love this game  beat my score if you can!\n Play the game at \n https://arnav5544.github.io/switch-the-bulb \n and beat my score.")
+    document.getElementById("whatsapp-share").href="https://api.whatsapp.com/send?phone=&text="+sendData+"&source=&data=&app_absent="
+}
+function replay(){
+    time=60;
+    score=0;
+    document.getElementById("time").innerHTML="Time Left : <span style='color:lightgreen;'> " +time+"</span>"
+    document.getElementById("score").innerHTML="Score : <span style='color:lightgreen;'> " +score+"</span>"
+    document.getElementById("pop").style.display="none"
+   highBool==true;}
+function toggle(){
+   if(bool==0){
+       document.getElementById("on").style.display="block"
+       document.getElementById("off").style.display="none"
+       document.getElementById("down").style.background="linear-gradient(grey,black)"
+       document.getElementById("up").style.background="transparent"
+       bool=1;
+   }
+   else{
+        document.getElementById("on").style.display="none"
+       document.getElementById("off").style.display="block"
+       document.getElementById("up").style.background="linear-gradient(black,grey)"
+       document.getElementById("down").style.background="transparent"
+       bool=0;
+   }
+    if(score%100==0 && score!==0){
+        score+=10;
+    }
+    document.getElementById("score").innerHTML="Score : <span style='color:lightgreen;'> " +score+"</span>"
+    score++
+}
+
+    </script>
+    <script>
+    
+ // Code to handle install prompt on desktop
+  let deferredPrompt; const addBtn = document.querySelector('.add-button');
+addBtn.style.display = 'none';
+   window.addEventListener('beforeinstallprompt', (e) => { 
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+   e.preventDefault(); 
+   // Stash the event so it can be triggered later.
+    deferredPrompt = e; 
+   // Update UI to notify the user they can add to home screen 
+   addBtn.style.display = 'block'; addBtn.addEventListener('click', (e) => {
+    // hide our user interface that shows our A2HS button 
+    addBtn.style.display = 'none';
+     // Show the prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+       deferredPrompt.userChoice.then((choiceResult) => { if (choiceResult.outcome === 'accepted') { console.log('User accepted the A2HS prompt'); } else { console.log('User dismissed the A2HS prompt'); } deferredPrompt = null; }); }); });
+
+</script>
+ 
+</html>
