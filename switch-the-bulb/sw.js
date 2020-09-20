@@ -6,6 +6,7 @@ self.addEventListener('install', function(e) {
        'index.html',
        'script.js',
        'bulb.png',
+'install.svg',
 'ONbulb.jpg',
 'OFFbulb.jpg',
 'arnav.png',
