@@ -296,7 +296,13 @@ function toggle(){
 
     </script>
     <script>
-    
+    function unregisterSw(){
+	navigator.serviceWorker.getRegistrations().then(function(registrations) {
+ for(let registration of registrations) {
+  registration.unregister()
+} })
+		window.location.reload();
+	}
  // Code to handle install prompt on desktop
   let deferredPrompt; const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
