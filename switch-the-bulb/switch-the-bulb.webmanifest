@@ -12,6 +12,6 @@
   "start_url": "https://arnav5544.github.io/switch-the-bulb",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#6633ff"
+  "background_color": "#6633ff",
 "scope": "https://arnav5544.github.io/switch-the-bulb"
 }
