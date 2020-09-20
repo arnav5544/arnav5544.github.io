@@ -6,6 +6,8 @@ self.addEventListener('install', function(e) {
        'index.html',
        'script.js',
        'bulb.png',
+'ONbulb.jpg',
+'OFFbulb.jpg',
 'arnav.png',
 'switch-the-bulb.webmanifest',
      ]);
