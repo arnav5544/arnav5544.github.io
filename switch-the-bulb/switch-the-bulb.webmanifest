@@ -1,0 +1,16 @@
+{
+  "name": "💡Switch The Bulb💡",
+  "short_name": "💡Switch The Bulb💡",
+  "description": "Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster.",
+  "icons": [
+    {
+      "src": "bulb.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/switch-the-bulb",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#6633ff"
+}
