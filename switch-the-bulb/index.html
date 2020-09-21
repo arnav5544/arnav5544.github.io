@@ -222,19 +222,16 @@ document.getElementById("start").addEventListener("click",()=>{
 document.getElementById("how").style.display="none"
 document.getElementById("main").style.display="flex"
 setInterval(function(){
-    if(score>highScore && time==0 && highBool==true && !(localStorage.playerName)){
-       var playerName=prompt("🎊🎊🎉🎉🥳🥳 Hey You Just Broke the High Score!\nPlease Enter Your Nickname.🎊🎊🎉🎉🥳🥳")
-       localStorage.playerName=playerName;
+    if(score>highScore && time==0 && highBool==true){
+       var playerName=prompt("🎊🎉🥳 Hey You Just Broke the High Score!\nPlease Enter Your Nickname.🎊🎉🥳")
+var player=playerName;
+if(player==null ||player=="undefined"||player=="null"){player="anonymous"};
+       localStorage.playerName=player;
        setHighScore({name:localStorage.playerName,score:score})
        highBool==false
     }
 
-    if(score>highScore && time==0 && highBool==true && localStorage.playerName){
-      alert("🎊🎊🎉🎉🥳🥳 Hey You Just Broke the High Score!🎊🎊🎉🎉🥳🥳")
-       setHighScore({name:localStorage.playerName,score:score})
-       highBool==false
-    }
-
+    
 },1000)
 document.getElementById("switch").addEventListener("click",function(){toggle()})
 document.getElementById("replay").addEventListener("click",function(){replay()})
