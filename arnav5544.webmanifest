@@ -15,6 +15,21 @@
       "type": "image/png"
     }
   ],
+  "shortcuts" : [
+  {
+"short_name":"💡Switch The Bulb Game💡",
+    "name": "Play 💡Switch The Bulb💡 Game",
+    "url": "https://arnav5544.github.io/switch-the-bulb",
+"icons": [
+    {
+      "src": "switch-the-bulb/bulb.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+    "description": "Switch The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster."
+  }
+],
 "scope":"/",
   "start_url": "https://arnav5544.github.io/",
   "display": "standalone",
