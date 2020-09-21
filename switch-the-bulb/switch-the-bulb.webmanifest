@@ -19,7 +19,7 @@
     {
       "src": "bulb.png",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/png"
     }
   ],
     "description": "Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster."
