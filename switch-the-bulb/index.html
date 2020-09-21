@@ -298,6 +298,7 @@ function toggle(){
 	navigator.serviceWorker.getRegistrations().then(function(registrations) {
  for(let registration of registrations) {
   registration.unregister()
+	 alert("Unregistered Service Workers")
 } })
 		window.location.reload();
 	}
