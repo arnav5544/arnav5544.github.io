@@ -6,9 +6,26 @@
     {
       "src": "bulb.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+
     }
   ],
+"shortcuts" : [
+  {
+"short_name":"Play"
+    "name": "Play",
+    "url": "/",
+"icons": [
+    {
+      "src": "bulb.png",
+      "sizes": "512x512",
+      "type": "image/png",
+
+    }
+  ],
+    "description": "Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster.""
+  },
+],
   "start_url": "https://arnav5544.github.io/switch-the-bulb",
   "display": "standalone",
   "theme_color": "#000000",
