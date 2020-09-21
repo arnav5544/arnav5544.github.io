@@ -3,6 +3,7 @@ self.addEventListener('install', function(e) {
    caches.open('switch-the-bulb').then(function(cache) {
      return cache.addAll([
       'https://arnav5544.github.io/switch-the-bulb/',
+      'https://arnav5544.github.io/switch-the-bulb',
        'index.html',
        'script.js',
        'bulb.png',
