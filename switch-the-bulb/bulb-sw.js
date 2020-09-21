@@ -2,6 +2,7 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('switch-the-bulb').then(function(cache) {
      return cache.addAll([
+      '/switch-the-bulb',
        'index.html',
        'script.js',
        'bulb.png',
