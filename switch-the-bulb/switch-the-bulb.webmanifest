@@ -13,7 +13,7 @@
   {
 "short_name":"Play",
     "name": "Play",
-    "url": "/",
+    "url": "https://arnav5544.github.io/switch-the-bulb",
 "icons": [
     {
       "src": "bulb.png",
