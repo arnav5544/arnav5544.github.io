@@ -1,6 +1,6 @@
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('arnav5544').then(function(cache) {
+   caches.open('switch-the-bulb').then(function(cache) {
      return cache.addAll([
        'https://arnav5544.github.io/switch-the-bulb',
        'index.html',
