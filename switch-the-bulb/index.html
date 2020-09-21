@@ -232,7 +232,9 @@ if(player==null ||player=="undefined"||player=="null"){player="anonymous"};
        setHighScore({name:localStorage.playerName,score:score})
        highBool==false
     }
-
+if(!(navigator.onLine)){
+document.getElementById("high").innerHTML=`High Score : <span style="color:red;">No Internet!</span>`
+}
     
 },1000)
 document.getElementById("switch").addEventListener("click",function(){toggle()})
