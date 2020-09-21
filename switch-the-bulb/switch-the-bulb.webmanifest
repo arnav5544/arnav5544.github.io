@@ -1,7 +1,7 @@
 {
   "name": "💡Switch The Bulb💡",
   "short_name": "💡Switch The Bulb💡",
-  "description": "Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster.",
+  "description": "Switch The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster.",
   "icons": [
     {
       "src": "bulb.png",
@@ -21,7 +21,7 @@
       "type": "image/png"
     }
   ],
-    "description": "Swith The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster."
+    "description": "Switch The Bulb Is an Interesting Game of Switching the Bulb ON and OFF.This Game Improves Your Concentration and Makes Your Hand Faster."
   }
 ],
   "start_url": "https://arnav5544.github.io/switch-the-bulb",
