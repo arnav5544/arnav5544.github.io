@@ -1,0 +1,32 @@
+{
+    "name": "Vovel or Consonent the Learning Game for Kids",
+    "short_name": "vovel or consonent",
+    "description": "Learning Game For Kids. Helps your kid differenciate between Vovels and Consonents.",
+    "icons": [
+      {
+        "src": "learn.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+  "shortcuts" : [
+    {
+  "short_name":"Play",
+      "name": "Play",
+      "url": "https://arnav5544.github.io/kids/vovel-consonent-game/",
+  "icons": [
+      {
+        "src": "learn.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+      "description": "Learning Game For Kids. Helps your kid differenciate between Vovels and Consonents."
+    }
+  ],
+    "start_url": "https://arnav5544.github.io/kids/vovel-consonent-game/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#6633ff",
+  "scope": "https://arnav5544.github.io/kids/vovel-consonent-game/"
+  }
