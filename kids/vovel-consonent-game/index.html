@@ -132,22 +132,40 @@ body{
 
 #install {
     position: absolute;
-    left: 45vw;
+    left: 50vw;
     bottom: 0px;
     margin: 5px;
     z-index: 999999;
-    font-size: 15px;
+    font-size: 25px;
     background-color: black;
     color: white;
-    padding: 5px 8px 8px;
+    padding: 8px 5px;
     border: 0;
     border-radius: 3px;
+   
 }
-#install:active{
+#install:active,#share:active{
 	transform:scale(0.96);
 		}
-
-
+#share {
+    left: 30vw;
+    bottom: 0;
+    display: flex;
+    color: white;
+    background-color: black;
+    position: absolute;
+    padding: 10px 5px;
+    margin: 5px;
+    border: 0;
+    border-radius: 3px;
+    font-size: 23px;
+    z-index: 99999999;
+}
+.material-icons {
+    padding: 0 5px !important;
+    font-weight: bold;
+    font-size: 30px;
+}
         </style>
     <link rel="manifest" href="game.webmanifest">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -630,9 +648,10 @@ refressContent();
     </head>
 
     <body>
+	    <div id="share-container"><button id="share"><span class="material-icons">share</span> Share </button></div>
      <div>
         <button id="install" class="add-button" style="display: none;">
-<img src="/switch-the-bulb/install.svg" style="width:20px;transform:translateY(5px);"> Install
+<img src="/switch-the-bulb/install.svg" style="width:25px;transform:translateY(5px);"> Install
         </button>
 
       </div>
@@ -666,6 +685,28 @@ refressContent();
 	       src="https://dl.dropbox.com/s/91yrquk9wgw75hl/right-answer.mp3"></audio>
             
            <script>
+		   
+		 const shareData = {
+    title: 'Best Vovel and Consonent Game ',
+    text: 'Help Your kid to Differenciate between the Vovels and Consonents very easily by playing Vovel or consonent Game. \n This game is available online at https://arnav5544.github.io/kids/vovel-consonent-game/ \n  You can play this game there or also you can download from there.',
+    url: 'https://arnav5544.github.io/kids/vovel-consonent-game/',
+  };
+
+  const shareBtn = document.querySelector('share');
+
+  shareBtn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      console.log('shared successfully!')
+    } catch(err) {
+      alert('An Error occured while sharing')
+      console.log(err)
+    }
+  });  
+		   
+		   
+		   
+		   
     function unregisterSw(){
 	navigator.serviceWorker.getRegistrations().then(function(registrations) {
  for(let registration of registrations) {
