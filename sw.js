@@ -12,7 +12,7 @@ self.addEventListener('install', function(e) {
       'projects/',
       'projects/phone/',
       'projects/phone/phone.jpg',
-      'projects/phone/index.html/',
+      'projects/phone/index.html',
      'chat-white-18dp.svg',
 'arnav.png',
 'arnav5544.webmanifest',
