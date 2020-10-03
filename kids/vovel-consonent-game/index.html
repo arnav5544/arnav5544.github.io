@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <style>
+            body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size:25px;
+}
+*{margin:0;padding:0;
+
+}
+#main{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:space-around;
+    flex-direction:column;
+    background:linear-gradient(white,white);
+}
+.vovel{
+    color:red;
+}
+.consonent{
+    color:dodgerblue;
+}
+#alphabets,#words{
+    font-size:50px;
+    font-weight:bold;
+    width:100vw;
+text-align:center;
+    
+}
+span{
+    padding: 5px;
+    display:inline-block;
+    cursor:pointer;
+}
+hr{
+    border-radius:5px;
+    width:97%;
+    height:5px;
+    background-color:dodgerblue;
+    border:2px solid dodgerblue;
+    
+}
+#emogi{
+    padding:5px;
+    width:100px;
+    height:100px;
+    position:absolute ;
+    bottom:2vh;
+    right:2vh;
+    font-size:63px;
+    border-radius:100%;
+    border:5px solid dodgerblue;
+    text-align:center;
+    animation:shake .5s linear infinite;
+}
+#instructions{
+    text-align:center;
+    font-weight:bold;
+}
+@keyframes shake{
+    0%{transform:rotate(0deg);}
+    25%{transform:rotate(10deg);}
+    50%{transform:rotate(0deg);}
+    75%{transform:rotate(-10deg);}
+    100%{transform:rotate(0deg);}
+}
+.red{
+    color:red;
+}
+#info{
+    position:relative;
+    width:80vw;
+    height:70vh;
+    background-color:white;
+    border-radius:5px;
+    padding:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction:column;
+    text-align:center;
+}
+#info-container{
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+}
+select{
+    font-size:25px;
+    background-color:dodgerblue;
+    color:white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    border:0;
+    border-radius:3px;
+    padding:5px;
+    font-weight:bold;
+}
+.close{
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.material-icons{
+    font-weight:bold;
+    font-size:30px;
+}
+
+#moreInfo{
+    font-weight:bold;
+    font-size:50px;
+    color:black;
+}
+#more{
+    position:absolute;
+    left:2vh;
+    bottom:2vh;
+}
+body{
+    overflow: hidden;
+}
+
+
+
+
+
+        </style>
+    <link rel="manifest" href="game.webmanifest">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="learn.jpg">
+<link rel="icon" type="image/x-icon" href="learn.jpg">
+<meta name="theme-color" content="#000">
+<meta name="author" content="arnav kumar">
+<meta name="keywords" content="Kids,arnav,vovel,consonent,game,learning,byjus,twitter,google,education">
+<meta name="description" content="Learning Game For Kids. Helps your kid differenciate between Vovels and Consonents.">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
+        <title>Vovel or Consonent the Learning Game for Kids</title>
+        <script>
+            
+function id(element){
+    return document.getElementById(element);
+}
+function clas(element){
+    return document.getElementsByClassName(element);
+}
+function random(start=0,end){return Math.floor(Math.random() * end) + start;}
+
+var vovels="aeiou";
+var good=["👍","👌","🥰","💯","🤟","🥳","🤠","😻","👏"];
+var bad=["😱","😟","😭","☹️","😾","🙀","😔","😩","😨"]
+var alphabets=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var questions=[{
+    text:"start",
+    length:1
+},
+{
+    text:"cat",
+    length:1
+},
+{
+    text:"dog",
+    length:1
+},
+{
+    text:"elephant",
+    length:3
+},
+{
+    text:"tiger",
+    length:2
+},
+{
+    text:"duggu",
+    length:2
+},
+{
+    text:"dinosaur",
+    length:4
+},
+{
+    text:"fish",
+    length:1
+},
+{
+    text:"mosquito",
+    length:4
+},
+{
+    text:"rabbit",
+    length:2
+},
+{
+    text:"cow",
+    length:1
+},
+{
+    text:"snake",
+    length:2
+},
+{
+    text:"meteor",
+    length:3
+},
+{
+    text:"train",
+    length:2
+},
+{
+    text:"rock",
+    length:1
+},
+{
+    text:"apple",
+    length:2
+},
+{
+    text:"mouse",
+    length:3
+},
+{
+    text:"zebra",
+    length:"2"
+},
+{
+    text:"son",
+    length:1
+},
+{
+    text:"meat",
+    length:2
+},
+{
+    text:"car",
+    length:1
+},
+{
+    text:"mat",
+    length:1
+},
+{
+    text:"sunday",
+    length:2
+},
+{
+    text:"monday",
+    length:2
+},
+{
+    text:"tuesday",
+    length:3
+},
+{
+    text:"wednesday",
+    length:3
+},
+{
+    text:"thursday",
+    length:2
+},
+{
+    text:"friday",
+    length:2
+},
+{
+    text:"saturday",
+    length:3
+},
+{
+    text:"january",
+    length:3
+},
+{
+    text:"february",
+    length:3
+},
+{
+    text:"march",
+    length:1
+},
+{
+    text:"april",
+    length:3
+},
+{
+    text:"may",
+    length:1
+},
+{
+    text:"june",
+    length:2
+},
+{
+    text:"july",
+    length:1
+},
+{
+    text:"august",
+    length:3
+},
+{
+    text:"september",
+    length:3
+},
+{
+    text:"october",
+    length:3
+},
+{
+    text:"november",
+    length:3
+},
+{
+    text:"december",
+    length:3
+},
+{
+    text:"one",
+    length:2
+},
+{
+    text:"two",
+    length:1
+},
+{
+    text:"three",
+    length:2
+},
+{
+    text:"four",
+    length:2
+},
+{
+    text:"five",
+    length:2
+},
+{
+    text:"six",
+    length:1
+},
+{
+    text:"seven",
+    length:2
+},
+{
+    text:"eight",
+    length:2
+},
+{
+    text:"nine",
+    length:2
+},
+{
+    text:"ten",
+    length:1
+},
+{
+    text:"mercury",
+    length:2
+},
+{
+    text:"venus",
+    length:2
+},
+{
+    text:"earth",
+    length:2
+},
+{
+    text:"mars",
+    length:1
+},
+{
+    text:"jupiter",
+    length:3
+},
+{
+    text:"saturn",
+    length:2
+},
+{
+    text:"uranus",
+    length:3
+},
+{
+    text:"neptune",
+    length:3
+},
+{
+    text:"sun",
+    length:1
+},
+{
+    text:"india",
+    length:3
+},
+{
+    text:"america",
+    length:4
+},
+{
+    text:"russia",
+    length:4
+},
+{
+    text:"europe",
+    length:4
+},
+{
+    text:"asia",
+    length:3
+},
+{
+    text:"africa",
+    length:3
+},
+{
+    text:"australlia",
+    length:5
+},
+{
+    text:"book",
+    length:2
+},
+{
+    text:"notebook",
+    length:4
+},
+{
+    text:"pencil",
+    length:2
+},
+{
+    text:"pen",
+    length:1
+},
+{
+    text:"eraser",
+    length:3
+},
+{
+    text:"sharpner",
+    length:2
+},
+{
+    text:"diary",
+    length:2
+},
+{
+    text:"none",
+    length:2
+},
+{
+    text:"end",
+    length:1
+}
+
+]
+var qType=0
+var clength=0;
+function checkAnswer(question,answer){
+    if(question==0){
+        if(vovels.includes(answer)){return true;}
+        else{return false;}
+    }
+    if(question==1){
+        if(!(vovels.includes(answer))){return true;}
+        else{return false;}
+    }
+}
+
+var qNo=0;
+
+function objLength(object){return Object.keys(object).length;}    
+
+function show_questions(object){
+
+for(leters=0;leters<object.text.length;leters++){
+    window['Qletter'+leters] = document.createElement("span");
+   
+    window['Qletter'+leters].tap=true;
+     window['Qletter'+leters].innerHTML=object.text[leters]
+window['Qletter'+leters].id=JSON.stringify(object); window['Qletter'+leters].innerHTML=window['Qletter'+leters].innerHTML.toUpperCase()
+    window['Qletter'+leters].className="questions";
+    id("words").appendChild(window['Qletter'+leters])
+}
+}
+var listen=0;
+function refressContent(){
+document.querySelectorAll('.questions').forEach(item => {
+item.addEventListener('click', ()=> {
+  if(item.tap==true){
+   if(checkAnswer(qType,item.innerHTML.toLowerCase())){
+   
+   clength++
+   if(qType==0){
+   
+   if(clength==JSON.parse(item.id).length){
+   qNo++
+   if(qNo==objLength(questions)){
+   qNo=0;
+   }
+   id("words").innerHTML=""
+   show_questions(questions[qNo])
+   refressContent();
+       clength = 0;
+       
+   }
+   
+       }
+       if(qType==1){
+           
+           if(clength==(JSON.parse(item.id).text.length)-(JSON.parse(item.id).length)){
+   qNo++
+   if(qNo==objLength(questions)){
+   qNo=0;
+   }
+   id("words").innerHTML=""
+   show_questions(questions[qNo])
+   refressContent();
+       clength = 0;
+       
+   }
+   
+           
+       }
+       
+       id("right").play();
+       
+       //correct answer
+       item.style.color="green"
+       id("emogi").innerHTML=good[random(0,8)]
+   }
+   else{
+   id("wrong").play();
+   //wrong answer
+   item.style.color="red"
+   id("emogi").innerHTML=bad[random(0,8)]
+   }
+   item.tap=false
+   }
+   
+   
+  }
+
+  
+  )
+})
+
+}
+
+
+onload=()=>{
+
+id("question-topic").addEventListener(
+    "change", ()=> {
+        qType = id("question-topic").value;
+        id("info-container").style.display="none"
+        if(id("question-topic").value==0){
+        id("instructions").innerHTML="Click on Vovels"
+        }
+        else{
+            id("instructions").innerHTML="Click on Consonents"
+        }
+    }
+)
+
+clas("close")[0].addEventListener("click", () =>{
+    id("info-container").style.display="none"
+})
+id("more").addEventListener("click", () =>{
+    id("info-container").style.display="flex"
+})
+show_questions(questions[qNo])
+
+for(leters of alphabets){
+   window['letter'+leters] = document.createElement("span"); window['letter'+leters].innerHTML=leters.toUpperCase();
+   window['letter'+leters].id=leters;
+      
+   
+   if(vovels.includes(leters)){
+       window['letter'+leters].className="vovel";
+       id("alphabets").appendChild(window['letter'+leters])
+   }
+   else{
+       window['letter'+leters].className="consonent";
+       id("alphabets").appendChild(window['letter'+leters])
+   }
+}
+
+refressContent();
+
+}
+
+
+
+
+
+
+
+
+
+        </script>
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="alphabet-container">
+                <p id="alphabets" ></p>
+                <center><hr></center>
+            </div>
+            <div id="instructions">Click on vovels</div><center><hr class="red"></center>
+            <div id="words"></div>
+            <center><hr></center>
+            <div id="emogi"></div>
+            <div id="more"> <span id="moreInfo" class="material-icons">settings</span></div>
+            <div id="info-container">                                                            <div id="info">
+            <div class="close">
+                <span class="material-icons">close</span>
+            </div>
+            <label for="question-topic"><b>Choose a Topic For Questions:</b><br/></label>
+                <select name="question-topic" id="question-topic">
+                    <option value="0">Vovels</option>
+                    <option value="1">Consonents</option>
+                </select>
+                <div></div>
+            </div>
+          </div>
+        </div>
+        <audio id="wrong"
+        src="https://dl.dropbox.com/s/f3qxbrvvu4mxa25/wrong-answer.mp3">
+        
+        <audio id="right" 
+        src="https://dl.dropbox.com/s/91yrquk9wgw75hl/right-answer.mp3">
+        
+    </body>
+</html>
