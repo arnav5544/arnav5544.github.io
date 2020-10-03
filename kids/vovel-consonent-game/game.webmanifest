@@ -4,7 +4,7 @@
     "description": "Learning Game For Kids. Helps your kid differenciate between Vovels and Consonents.",
     "icons": [
       {
-        "src": "learn.jpg",
+        "src": "learn.png",
         "sizes": "512x512",
         "type": "image/png"
       }
@@ -16,7 +16,7 @@
       "url": "https://arnav5544.github.io/kids/vovel-consonent-game/",
   "icons": [
       {
-        "src": "learn.jpg",
+        "src": "learn.png",
         "sizes": "512x512",
         "type": "image/png"
       }
