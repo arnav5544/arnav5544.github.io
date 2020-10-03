@@ -11,7 +11,7 @@ self.addEventListener('install', function(e) {
        'kids/vovel-consonent-game/',
       'kids/vovel-consonent-game/index.html',
       'kids/vovel-consonent-game/game.webmanifest',
-      'kids/vovel-consonent-game/learn.jpg',
+      'kids/vovel-consonent-game/learn.png',
       'projects/phone/',
       'projects/phone/phone.jpg',
       'projects/phone/index.html',
