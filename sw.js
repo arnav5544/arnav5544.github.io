@@ -8,7 +8,10 @@ self.addEventListener('install', function(e) {
        'style.css',
        'image.png',
        'head.jpeg',
-      
+       'kids/vovel-consonent-game/',
+      'kids/vovel-consonent-game/index.html',
+      'kids/vovel-consonent-game/game.webmanifest',
+      'kids/vovel-consonent-game/learn.jpg',
       'projects/phone/',
       'projects/phone/phone.jpg',
       'projects/phone/index.html',
