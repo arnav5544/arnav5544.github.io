@@ -16,6 +16,7 @@ self.addEventListener('install', function(e) {
       'projects/phone/phone.png',
       'projects/phone/index.html',
      'chat-white-18dp.svg',
+      '/tutorials/host-your-website-using-github-pages/',
 'arnav.png',
 'arnav5544.webmanifest',
      ]);
